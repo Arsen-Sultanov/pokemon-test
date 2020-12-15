@@ -1,0 +1,25 @@
+.header {
+  z-index: 100;
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,1);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,1);
+}
+
+.headerScroled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 80px;
+}
+.logoImg {
+  width: auto;
+}
+
