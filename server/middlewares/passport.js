@@ -9,7 +9,7 @@ export const localStrategy = new LocalStrategy(async (email, password, done) => 
     if (!user) {
       return done(null, false, { message: 'Incorrect username.' });
     }
-    if (!(user === password)) {
+    if (!(user.password === password)) {
       return done(null, false, { message: 'Incorrect password.' });
     }
     return done(null, user);

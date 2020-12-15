@@ -24,6 +24,15 @@ class Store {
     localStorage.setItem('user', JSON.stringify(user));
     this.user = user;
   }
+  auth() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user === null) {
+      return;
+    }
+    this.setUser(user);
+    this.setAuth(true);
+
+  }
 };
 
 export default new Store();

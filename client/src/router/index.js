@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import * as Public from 'pages/public';
-import UserRouter from './user';
-import Admin from './admin';
+import PublicRouter from './public';
 
 export default () => {
   return (
@@ -13,10 +12,10 @@ export default () => {
         <Route exact path="/403" component={Public.ErrorAuthorized}/>
         <Route exact path="/404" component={Public.ErrorPageNotExist}/>
         <Route exact path="/500" component={Public.ErrorServer}/>
-
-        <Route path="/admin" component={Admin}/>
-        <Route path="/" component={UserRouter}/>
-        <Route exact path="*" component={Public.ErrorPageNotExist}/>
+        <Route path="/" component={PublicRouter}/>
+        <Route >
+          <Redirect push to="/404"/>
+        </Route>
 
 
       </Switch>

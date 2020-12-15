@@ -112,15 +112,6 @@ const SignUp = () => {
 
         <div className={s.socWrap}>
           <Col span={24}>
-            <Button
-              className={s.button}
-              icon={<GithubOutlined/>}
-            >
-              Sign up with Github
-            </Button>
-          </Col>
-
-          <Col span={24}>
             <a href="http://localhost:3000/api/v1/sign/gmail">
               <Button
                 className={s.button}

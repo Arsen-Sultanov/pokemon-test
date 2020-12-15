@@ -97,15 +97,6 @@ const SignIn = observer(({ store }) => {
           <Col span={24}>
             <Button
               className={s.button}
-              icon={<GithubOutlined/>}
-            >
-              Sign In with Github
-            </Button>
-          </Col>
-
-          <Col span={24}>
-            <Button
-              className={s.button}
               icon={<GoogleOutlined/>}
             >
               Sign In with Google

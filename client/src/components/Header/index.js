@@ -12,6 +12,16 @@ import s from './style.scope.css';
 
 const { Header: AntHeader } = Layout;
 
+const Logo = () => (
+  <Link to="/">
+    <img
+      alt="Pokemon logo"
+      src={logo}
+      className={s.logoImg}
+    />
+  </Link>
+);
+
 const Header = observer(({ store }) => {
   return (
     <AntHeader>
@@ -28,19 +38,13 @@ const Header = observer(({ store }) => {
             />
           </Col>
           <Col xs={0} sm={4}>
-            <Link to="/">
-              <img
-                alt="Pokemon logo"
-                src={logo}
-                className={s.logoImg}
-              />
-            </Link>
+            <Logo/>
           </Col>
 
         </Row>
 
         <Col xs={8} sm={0}>
-          <img src={logo} className={s.logoImg} alt="Pokemon logo"/>
+          <Logo/>
         </Col>
 
         <Row gutter={[16, 0]}>

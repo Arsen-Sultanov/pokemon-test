@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
 import { sign } from 'api';
 import { observer } from 'mobx-react-lite';
@@ -17,6 +18,11 @@ const AvatarMenu = observer(({ store }) => {
 
   return (
     <Menu>
+      <Menu.Item>
+        <Link to="/favorite">
+          Favorite
+        </Link>
+      </Menu.Item>
       <Menu.Item onClick={onExitClick}>
         Exit
       </Menu.Item>

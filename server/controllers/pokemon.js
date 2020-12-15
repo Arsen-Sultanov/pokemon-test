@@ -120,15 +120,15 @@ export const get = async (req, res, next) => {
       { $count: 'count' }
     ];
 
-    const qery = [
+    const query = [
       { $facet: { page, count } }
     ];
 
-    const qeryResult = await Pokemon.aggregate(qery);
+    const queryResult = await Pokemon.aggregate(query);
 
     const response = {};
-    qeryResult[0].page && (response.page = qeryResult[0].page);
-    qeryResult[0].count[0] && (response.totalItemsCount = qeryResult[0].count[0].count);
+    queryResult[0].page && (response.page = queryResult[0].page);
+    queryResult[0].count[0] && (response.totalItemsCount = queryResult[0].count[0].count);
 
     res.status(200).send(response);
   } catch (error) {

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Layout } from 'antd';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import store from 'store';
 import { Header, Drawer } from 'components';
 import * as Public from 'pages/public';
+import * as User from 'pages/user';
 import s from './style.scope.css';
 
-const { Footer } = Layout;
 
-const UserLayout = ({ children }) => {
+const PublicLayout = ({ children }) => {
   return (
     <Layout>
       <Header/>
@@ -17,21 +19,24 @@ const UserLayout = ({ children }) => {
           { children }
         </Layout.Content>
       </Layout>
-      <Footer>Footer</Footer>
     </Layout>
   );
 };
 
-const UserRouter = () => {
+const PublicRouter = observer(({ ...store }) => {
   return (
-    <UserLayout>
+    <PublicLayout>
       <Switch>
+        { store.isAuth && (<Route exact path="/favorite" component={User.Favorite}/>) }
         <Route exact path="/" component={Public.Main}/>
         <Route exact path="/pokemon" component={Public.Main}/>
         <Route exact path="/pokemon/:id" component={Public.Pokemon}/>
+        <Route>
+          <Redirect push to="/404"/>
+        </Route>
       </Switch>
-    </UserLayout>
+    </PublicLayout>
   );
-};
+});
 
-export default UserRouter;
+export default () => <PublicRouter store={store} />;
