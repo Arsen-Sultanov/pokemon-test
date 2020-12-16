@@ -16,7 +16,7 @@ or
 ```javascript
   $ yarn run migration-up
 ```
-after all this, you can start the project by running two commands
+after all this, you can start the project by running two commands:
 
 ```javascript
   $ npm run-script start

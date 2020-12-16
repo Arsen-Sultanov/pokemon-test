@@ -94,14 +94,14 @@ const SignIn = observer(({ store }) => {
         </Col>
 
         <div className={s.socWrap}>
-          <Col span={24}>
+          <a href="./api/v1/sign/gmail">
             <Button
               className={s.button}
               icon={<GoogleOutlined/>}
             >
-              Sign In with Google
+              Sign up with Google
             </Button>
-          </Col>
+          </a>
         </div>
 
         <Col span={24} className={s.col}>

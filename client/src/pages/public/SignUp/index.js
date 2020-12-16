@@ -112,7 +112,7 @@ const SignUp = () => {
 
         <div className={s.socWrap}>
           <Col span={24}>
-            <a href="http://localhost:3000/api/v1/sign/gmail">
+            <a href="./api/v1/sign/gmail">
               <Button
                 className={s.button}
                 icon={<GoogleOutlined/>}
