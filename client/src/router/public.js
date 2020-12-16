@@ -23,7 +23,7 @@ const PublicLayout = ({ children }) => {
   );
 };
 
-const PublicRouter = observer(({ ...store }) => {
+const PublicRouter = observer(({ store }) => {
   return (
     <PublicLayout>
       <Switch>

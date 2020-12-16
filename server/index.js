@@ -20,6 +20,7 @@ app
   .use('/static', express.static(path.resolve('build/images')))
   .use(session)
   .use(passport.initialize())
+  .use(passport.session())
   .use(express.json())
   .use('/api/v1', router)
   .use((error, req, res, next) => {
