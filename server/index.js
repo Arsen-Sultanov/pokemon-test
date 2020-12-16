@@ -17,7 +17,7 @@ passport.deserializeUser(passportMw.deserializeUser);
 const app = express();
 
 app
-  .use('/static', express.static(path.resolve('build/images')))
+  .use('/api/v1/static', express.static(path.resolve('build/images')))
   .use(session)
   .use(passport.initialize())
   .use(passport.session())

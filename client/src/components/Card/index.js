@@ -29,7 +29,7 @@ const Card = observer(({ store, id, deleteId, name, image, description, onDelete
     <AntdCard
       hoverable
       style={{ width: 240 }}
-      cover={<img alt={name} src={`http://localhost:8000/static/${image}`} />}
+      cover={<img alt={name} src={`/api/v1/static/${image}`} />}
       actions={[
         useRouteMatch('/favorite')
           ? <DeleteOutlined key={1} onClick={() => deleteFavarite(deleteId)}/>
